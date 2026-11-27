@@ -1,0 +1,8 @@
+{
+    "experimento": "T1-Perdida",
+    "parametros": {
+        "loss_configurado_pct": 5.0
+    },
+    "repeticion": 3,
+    "hora": "2026-11-13T18:33:25.832986"
+}

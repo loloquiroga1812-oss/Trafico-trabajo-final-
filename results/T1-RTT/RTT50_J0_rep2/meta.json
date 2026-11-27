@@ -1,0 +1,60 @@
+{
+    "version": 2,
+    "experimento": "T1-RTT",
+    "corrida": "RTT50_J0_rep2",
+    "semilla": 2346016643,
+    "hora": "2026-11-19T20:38:13.449647",
+    "parametros": {
+        "origen": "srv",
+        "destino": "cli",
+        "rtt_configurado_ms": 50,
+        "jitter_configurado_ms": 0,
+        "delay_por_sentido_ms": 25.0,
+        "jitter_por_sentido_ms": 0,
+        "distribucion": "fija",
+        "n_pings": 500,
+        "intervalo_s": 0.05,
+        "rtt_base_ms": 0.1723333333333333
+    },
+    "repeticion": 2,
+    "ping_resumen": {
+        "tx": 500,
+        "rx": 500,
+        "min_ms": 50.166,
+        "avg_ms": 50.705,
+        "max_ms": 51.157,
+        "mdev_ms": 0.144
+    },
+    "chequeos": {
+        "tx_ok": true,
+        "perdida_pct": 0.0,
+        "sin_perdida": true,
+        "duracion_s": 25.479814260000012
+    },
+    "cpu_cgroup_delta": {
+        "cli": {
+            "usage_usec": 2050,
+            "nr_throttled": 0,
+            "util_nucleos": 8.045584552075142e-05
+        },
+        "r_wan": {
+            "usage_usec": 2142,
+            "nr_throttled": 0,
+            "util_nucleos": 8.406654688070708e-05
+        },
+        "r_bn": {
+            "usage_usec": 2177,
+            "nr_throttled": 0,
+            "util_nucleos": 8.544018326764675e-05
+        },
+        "srv": {
+            "usage_usec": 133421,
+            "nr_throttled": 0,
+            "util_nucleos": 0.00523634115376789
+        }
+    },
+    "tc_estado": {
+        "r_wan_acc": "qdisc netem 8009: root refcnt 17 limit 100000 delay 25ms\n Sent 49084 bytes 502 pkt (dropped 0, overlimits 0 requeues 0) \n backlog 0b 0p requeues 0",
+        "r_wan_core": "qdisc netem 800a: root refcnt 17 limit 100000 delay 25ms\n Sent 49042 bytes 501 pkt (dropped 0, overlimits 0 requeues 0) \n backlog 0b 0p requeues 0"
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "experimento": "T2",
+    "tipo": "fija",
+    "corrida": "W256_RTT10_reno_rep3",
+    "hora": "2026-11-25T16:49:31.080547",
+    "rtt_base_ms": 0.206,
+    "parametros": {
+        "capacidad_mbps": 100.0,
+        "w_kb": 256,
+        "rtt_cfg_ms": 10,
+        "algoritmo": "reno",
+        "repeticion": 3,
+        "duracion_s": 10,
+        "omit_s": 2,
+        "buffer_bytes": 2500000
+    },
+    "duracion_real_s": 12.182986913001514,
+    "cpu_cgroup_delta": {
+        "cli": {
+            "usage_usec": 2550971,
+            "nr_throttled": 0
+        },
+        "r_wan": {
+            "usage_usec": 0,
+            "nr_throttled": 0
+        },
+        "r_bn": {
+            "usage_usec": 0,
+            "nr_throttled": 0
+        },
+        "srv": {
+            "usage_usec": 138164,
+            "nr_throttled": 0
+        }
+    }
+}

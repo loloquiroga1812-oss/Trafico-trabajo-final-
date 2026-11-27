@@ -1,0 +1,57 @@
+{
+    "experimento": "H3",
+    "corrida": "PS_rho09_det_rep1",
+    "semilla": 1625565707,
+    "hora": "2026-11-23T11:53:41.750005",
+    "calibracion_red": {
+        "hora": "2026-11-23T11:27:33.891918",
+        "rtt_ping": {
+            "rtt_min_ms": 0.167,
+            "rtt_avg_ms": 0.199,
+            "rtt_max_ms": 0.21,
+            "rtt_mdev_ms": 0.009
+        },
+        "s0_medido_ms": 0.005203987999266246,
+        "c0_medido_ms": 1.6576691160043993,
+        "c0_std_ms": 0.09357408229404668,
+        "overhead_http_ms": 1.4586691160043992
+    },
+    "parametros": {
+        "modo": "PS",
+        "e_d_ms": 10.0,
+        "s0_medido_ms": 0.005203987999266246,
+        "c0_medido_ms": 1.6576691160043993,
+        "rtt_ping_avg_ms": 0.199,
+        "rho_objetivo": 0.9,
+        "tasa_objetivo_rps": 89.95318846867133,
+        "dist_d": "det",
+        "r_bytes": 100,
+        "duracion_s": 130.0,
+        "calentamiento_s": 10.0
+    },
+    "repeticion": 1,
+    "pedidos_ok": 10831,
+    "duracion_real_s": 130.92971297300028,
+    "cpu_cgroup_delta": {
+        "gen": {
+            "usage_usec": 12545895,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+        },
+        "r_wan": {
+            "usage_usec": 0,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+        },
+        "r_bn": {
+            "usage_usec": 0,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+        },
+        "api1": {
+            "usage_usec": 127185077,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+        }
+    }
+}

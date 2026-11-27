@@ -1,0 +1,30 @@
+nohup: ignoring input
+Iniciando H5 (Balanceo con HAProxy)
+Calibrando tiempos en vacio directo vs. a traves de HAProxy...
+Calibracion lista -> s0=0.8219 ms (handler=0.0043, cgroup=0.8219) | c0_lb=0.6432 ms | gap_lb_api=0.3760 ms
+[1/60] K4_rho09_roundrobin_rep1 (K=4, rho=0.9, pol=roundrobin, lambda=332.66 req/s)...
+[2/60] K2_rho06_roundrobin_rep3 (K=2, rho=0.6, pol=roundrobin, lambda=110.89 req/s)...
+
+Experimento H5 finalizado.
+Traceback (most recent call last):
+  File "/home/lorenzo/Desktop/Trabajo final trafico/correr_h5.py", line 476, in <module>
+    main()
+  File "/home/lorenzo/Desktop/Trabajo final trafico/correr_h5.py", line 409, in main
+    ejecutar(cmd_gen)
+  File "/home/lorenzo/Desktop/Trabajo final trafico/correr_h5.py", line 16, in ejecutar
+    res = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2115, in _communicate
+    ready = selector.select(timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+nohup terminated by signal INT.

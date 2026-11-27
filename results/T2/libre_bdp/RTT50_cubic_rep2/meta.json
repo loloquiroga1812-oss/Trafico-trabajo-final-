@@ -1,0 +1,36 @@
+{
+    "experimento": "T2",
+    "tipo": "libre_bdp",
+    "corrida": "RTT50_cubic_rep2",
+    "hora": "2026-11-25T17:34:38.949841",
+    "rtt_base_ms": 0.206,
+    "parametros": {
+        "capacidad_mbps": 100.0,
+        "w_kb": null,
+        "rtt_cfg_ms": 50,
+        "algoritmo": "cubic",
+        "repeticion": 2,
+        "duracion_s": 18,
+        "omit_s": 2,
+        "buffer_bytes": 625000
+    },
+    "duracion_real_s": 20.497187073000532,
+    "cpu_cgroup_delta": {
+        "cli": {
+            "usage_usec": 3901863,
+            "nr_throttled": 0
+        },
+        "r_wan": {
+            "usage_usec": 0,
+            "nr_throttled": 0
+        },
+        "r_bn": {
+            "usage_usec": 3834409,
+            "nr_throttled": 0
+        },
+        "srv": {
+            "usage_usec": 154460,
+            "nr_throttled": 0
+        }
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "experimento": "H2",
+    "corrida": "FIFO_rho05_h2_rep2",
+    "semilla": 869784199,
+    "hora": "2026-11-22T15:08:31.657174",
+    "calibracion_red": {
+        "hora": "2026-11-22T14:46:46.292109",
+        "rtt_ping": {
+            "rtt_min_ms": 0.137,
+            "rtt_avg_ms": 0.19,
+            "rtt_max_ms": 0.226,
+            "rtt_mdev_ms": 0.016
+        },
+        "s0_medido_ms": 0.00429640815127641,
+        "c0_medido_ms": 1.2544127677683719,
+        "c0_std_ms": 0.05972237561029404,
+        "overhead_http_ms": 1.064412767768372
+    },
+    "parametros": {
+        "modo": "FIFO",
+        "e_d_ms": 10.0,
+        "s0_medido_ms": 0.00429640815127641,
+        "c0_medido_ms": 1.2544127677683719,
+        "rtt_ping_avg_ms": 0.19,
+        "rho_objetivo": 0.5,
+        "tasa_objetivo_rps": 49.978527184841425,
+        "dist_d": "h2",
+        "r_bytes": 100,
+        "duracion_s": 130.0,
+        "calentamiento_s": 10.0
+    },
+    "repeticion": 2,
+    "pedidos_ok": 6011,
+    "duracion_real_s": 130.45987300100023,
+    "cpu_cgroup_delta": {
+        "gen": {
+            "usage_usec": 7474545,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+        },
+        "r_wan": {
+            "usage_usec": 0,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+        },
+        "r_bn": {
+            "usage_usec": 0,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+        },
+        "api1": {
+            "usage_usec": 69400117,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+        }
+    }
+}

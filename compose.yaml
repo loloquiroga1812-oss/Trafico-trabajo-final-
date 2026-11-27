@@ -1,0 +1,206 @@
+services:
+  r_wan:
+    image: trafico-lab:latest
+    build: .
+    container_name: r_wan
+    hostname: r_wan
+    cpuset: "1"
+    cpu_period: 10000
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      net.ipv4.ip_forward: 1
+    command: sleep infinity
+    networks:
+      net_acc:
+        ipv4_address: 198.18.1.254
+      net_core:
+        ipv4_address: 198.18.2.253
+
+  r_bn:
+    image: trafico-lab:latest
+    build: .
+    container_name: r_bn
+    hostname: r_bn
+    cpuset: "1"
+    cpu_period: 10000
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      net.ipv4.ip_forward: 1
+    command: sleep infinity
+    networks:
+      net_core:
+        ipv4_address: 198.18.2.254
+      net_srv:
+        ipv4_address: 198.18.3.254
+
+  # --- CONTENEDORES PARTE 1 (TCP) ---
+  cli:
+    image: trafico-lab:latest
+    build: .
+    container_name: cli
+    hostname: cli
+    profiles: ["parte1"]
+    cpuset: "2"
+    cpu_period: 10000
+    cap_add:
+      - NET_ADMIN
+    command: sleep infinity
+    networks:
+      net_acc:
+        ipv4_address: 198.18.1.10
+
+  srv:
+    image: trafico-lab:latest
+    build: .
+    container_name: srv
+    hostname: srv
+    profiles: ["parte1"]
+    cpuset: "4"
+    cpu_period: 10000
+    cap_add:
+      - NET_ADMIN
+    command: sleep infinity
+    networks:
+      net_srv:
+        ipv4_address: 198.18.3.10
+
+  # --- CONTENEDORES PARTE 2 (COLAS HTTP) ---
+  gen:
+    image: trafico-lab:latest
+    build: .
+    container_name: gen
+    hostname: gen
+    profiles: ["parte2"]
+    cpuset: "2"
+    cpu_period: 10000
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./app:/app
+      - ./results:/results
+    command: sleep infinity
+    networks:
+      net_acc:
+        ipv4_address: 198.18.1.20
+
+  lb:
+    image: trafico-lab:latest
+    build: .
+    container_name: lb
+    hostname: lb
+    profiles: ["parte2"]
+    cpuset: "3"
+    cpu_period: 10000
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      net.ipv4.tcp_slow_start_after_idle: 0
+    volumes:
+      - ./config:/config
+    command: sleep infinity
+    networks:
+      net_srv:
+        ipv4_address: 198.18.3.20
+
+  api1:
+    image: trafico-lab:latest
+    build: .
+    container_name: api1
+    hostname: api1
+    profiles: ["parte2"]
+    cpuset: "4"
+    cpu_period: 10000
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      net.ipv4.tcp_slow_start_after_idle: 0
+    volumes:
+      - ./app:/app
+    command: sleep infinity
+    networks:
+      net_srv:
+        ipv4_address: 198.18.3.11
+
+  api2:
+    image: trafico-lab:latest
+    build: .
+    container_name: api2
+    hostname: api2
+    profiles: ["parte2"]
+    cpuset: "5"
+    cpu_period: 10000
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      net.ipv4.tcp_slow_start_after_idle: 0
+    volumes:
+      - ./app:/app
+    command: sleep infinity
+    networks:
+      net_srv:
+        ipv4_address: 198.18.3.12
+
+  api3:
+    image: trafico-lab:latest
+    build: .
+    container_name: api3
+    hostname: api3
+    profiles: ["parte2"]
+    cpuset: "6"
+    cpu_period: 10000
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      net.ipv4.tcp_slow_start_after_idle: 0
+    volumes:
+      - ./app:/app
+    command: sleep infinity
+    networks:
+      net_srv:
+        ipv4_address: 198.18.3.13
+
+  api4:
+    image: trafico-lab:latest
+    build: .
+    container_name: api4
+    hostname: api4
+    profiles: ["parte2"]
+    cpuset: "7"
+    cpu_period: 10000
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      net.ipv4.tcp_slow_start_after_idle: 0
+    volumes:
+      - ./app:/app
+    command: sleep infinity
+    networks:
+      net_srv:
+        ipv4_address: 198.18.3.14
+
+networks:
+  net_acc:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.gateway_mode_ipv4: nat-unprotected
+    ipam:
+      config:
+        - subnet: 198.18.1.0/24
+
+  net_core:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.gateway_mode_ipv4: nat-unprotected
+    ipam:
+      config:
+        - subnet: 198.18.2.0/24
+
+  net_srv:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.gateway_mode_ipv4: nat-unprotected
+    ipam:
+      config:
+        - subnet: 198.18.3.0/24

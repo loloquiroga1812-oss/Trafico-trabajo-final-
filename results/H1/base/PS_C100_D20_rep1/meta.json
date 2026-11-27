@@ -1,0 +1,40 @@
+{
+    "experimento": "H1",
+    "serie": "base",
+    "corrida": "PS_C100_D20_rep1",
+    "semilla": 1106567410,
+    "hora": "2026-11-21T15:03:50.098092",
+    "parametros": {
+        "modo": "PS",
+        "cupo_cpu_pct": 100,
+        "cpu_period_us": 10000,
+        "d_ms": 20,
+        "r_bytes": 100,
+        "pedidos": 300
+    },
+    "repeticion": 1,
+    "pedidos_ok": 300,
+    "duracion_s": 7.106498863000525,
+    "cpu_cgroup_delta": {
+        "gen": {
+            "usage_usec": 700383,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+        },
+        "r_wan": {
+            "usage_usec": 0,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+        },
+        "r_bn": {
+            "usage_usec": 0,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+        },
+        "api1": {
+            "usage_usec": 6373201,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+        }
+    }
+}

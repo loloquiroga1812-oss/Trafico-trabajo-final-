@@ -1,0 +1,40 @@
+{
+    "experimento": "H1",
+    "serie": "cupo",
+    "corrida": "FIFO_C25_D1_rep3",
+    "semilla": 3849553348,
+    "hora": "2026-11-21T15:08:53.479526",
+    "parametros": {
+        "modo": "FIFO",
+        "cupo_cpu_pct": 25,
+        "cpu_period_us": 10000,
+        "d_ms": 1,
+        "r_bytes": 100,
+        "pedidos": 300
+    },
+    "repeticion": 3,
+    "pedidos_ok": 300,
+    "duracion_s": 3.457807020000473,
+    "cpu_cgroup_delta": {
+        "gen": {
+            "usage_usec": 672412,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+        },
+        "r_wan": {
+            "usage_usec": 0,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+        },
+        "r_bn": {
+            "usage_usec": 0,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+        },
+        "api1": {
+            "usage_usec": 758277,
+            "nr_throttled": 302,
+            "throttled_usec": 2046374
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "experimento": "T4-Perdida",
+    "corrida": "RTT100_P2.0_bbr_rep3",
+    "semilla": 1192524883,
+    "hora": "2026-11-17T21:33:27.805256",
+    "parametros": {
+        "capacidad_mbps": 100,
+        "rtt_ms": 100,
+        "loss_pct": 2.0,
+        "algoritmo": "bbr",
+        "repeticion": 3,
+        "duracion_s": 20,
+        "omit_s": 2,
+        "bdp_bytes": 1250000,
+        "burst_bytes": 16000,
+        "limit_bytes": 1250000
+    },
+    "cpu_cgroup_delta": {
+        "cli": {
+            "usage_usec": 287660,
+            "nr_throttled": 0
+        },
+        "r_wan": {
+            "usage_usec": 1228,
+            "nr_throttled": 0
+        },
+        "r_bn": {
+            "usage_usec": 1272,
+            "nr_throttled": 0
+        },
+        "srv": {
+            "usage_usec": 133571,
+            "nr_throttled": 0
+        }
+    },
+    "tc_estado": {
+        "r_bn": "qdisc tbf 801f: root refcnt 17 rate 100Mbit burst 16000b lat 98.7ms \n Sent 236391865 bytes 156156 pkt (dropped 589, overlimits 140306 requeues 0) \n backlog 0b 0p requeues 0",
+        "r_wan_datos": "qdisc netem 8020: root refcnt 17 limit 100000 delay 50ms loss 2%\n Sent 231743885 bytes 153086 pkt (dropped 3070, overlimits 0 requeues 0) \n backlog 0b 0p requeues 0"
+    }
+}

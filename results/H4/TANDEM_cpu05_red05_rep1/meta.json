@@ -1,0 +1,59 @@
+{
+    "experimento": "H4",
+    "corrida": "TANDEM_cpu05_red05_rep1",
+    "semilla": 3148401767,
+    "hora": "2026-11-23T18:27:54.031595",
+    "calibracion_tandem": {
+        "hora": "2026-11-23T18:25:43.218408",
+        "tasa_enlace_mbps": 25.0,
+        "burst_tbf": "16kb",
+        "s0_cpu_ms": 0.004487579935812391,
+        "c0_puro_ms": 1.0688373799976059,
+        "h_http_bytes": 315.13,
+        "wire_r100_bytes": 481.13,
+        "wire_r30000_bytes": 31703.13,
+        "pendiente_wire_medida": 1.0442140468227425,
+        "pendiente_wire_teorica": 1.0455801104972375,
+        "ms_por_byte_payload_diag": 0.00029584247893696636,
+        "ms_por_byte_teorico": 0.00033458563535911605
+    },
+    "parametros": {
+        "modo": "FIFO",
+        "tasa_enlace_mbps": 25.0,
+        "burst_tbf": "16kb",
+        "e_d_ms": 10.0,
+        "r_media_bytes": 29554,
+        "e_wire_obj_bytes": 31264.023687299414,
+        "rho_cpu_objetivo": 0.5,
+        "rho_red_objetivo": 0.5,
+        "tasa_objetivo_rps": 49.97757216499118,
+        "duracion_s": 130.0,
+        "calentamiento_s": 10.0
+    },
+    "repeticion": 1,
+    "pedidos_ok": 6002,
+    "duracion_real_s": 130.61125466099838,
+    "tc_delta": {
+        "bytes_enviados": 204078886,
+        "pkts_enviados": 145650,
+        "dropped": 0
+    },
+    "cpu_cgroup_delta": {
+        "gen": {
+            "usage_usec": 22613392,
+            "nr_throttled": 0
+        },
+        "r_wan": {
+            "usage_usec": 0,
+            "nr_throttled": 0
+        },
+        "r_bn": {
+            "usage_usec": 72453,
+            "nr_throttled": 0
+        },
+        "api1": {
+            "usage_usec": 73928833,
+            "nr_throttled": 0
+        }
+    }
+}

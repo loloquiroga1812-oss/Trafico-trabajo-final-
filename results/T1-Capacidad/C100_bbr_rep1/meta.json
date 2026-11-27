@@ -1,0 +1,12 @@
+{
+    "experimento": "T1-Capacidad",
+    "parametros": {
+        "capacidad_mbit": 100,
+        "algoritmo": "bbr",
+        "buffer": "holgado"
+    },
+    "repeticion": 1,
+    "semilla": 3997733061,
+    "hora": "2026-11-13T13:16:40.988264",
+    "estado_tc": "OK"
+}

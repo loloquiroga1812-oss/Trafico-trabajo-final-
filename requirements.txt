@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+aiohttp
+numpy
+pandas
+scipy
+statsmodels
+matplotlib
