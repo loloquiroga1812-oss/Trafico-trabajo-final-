@@ -1,0 +1,20 @@
+== eth0 (198.18.1.*)
+qdisc prio 1: root refcnt 9 bands 3 priomap 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+ Sent 876101590 bytes 578697 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+qdisc netem 12: parent 1:2 limit 100000 delay 20ms seed 1878009871285957307
+ Sent 241508574 bytes 159531 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+qdisc netem 11: parent 1:1 limit 100000 delay 10ms seed 4439373500962801381
+ Sent 634592932 bytes 419164 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+== eth1 (198.18.2.*)
+qdisc prio 1: root refcnt 9 bands 3 priomap 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+ Sent 20885237 bytes 316167 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+qdisc netem 12: parent 1:2 limit 100000 delay 20ms seed 17135093142849717657
+ Sent 5950869 bytes 90040 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+qdisc netem 11: parent 1:1 limit 100000 delay 10ms seed 8702046632638236118
+ Sent 14934242 bytes 226124 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0

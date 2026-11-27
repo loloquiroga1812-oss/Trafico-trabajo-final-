@@ -1,0 +1,8 @@
+== eth0 (198.18.1.*)
+qdisc netem 8068: root refcnt 9 limit 100000 delay 25ms seed 243870649762621494
+ Sent 247920206 bytes 163797 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+== eth1 (198.18.2.*)
+qdisc netem 8067: root refcnt 9 limit 100000 delay 25ms seed 1672278676688455712
+ Sent 5526173 bytes 83726 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0

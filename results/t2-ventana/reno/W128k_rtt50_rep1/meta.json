@@ -1,0 +1,179 @@
+{
+ "exp": "t2-ventana",
+ "serie": "reno",
+ "corrida": "W128k_rtt50_rep1",
+ "tipo": "iperf",
+ "params": {
+  "C": 100,
+  "rtt": 50,
+  "jitter": 0,
+  "loss": 0,
+  "buf": 4000000,
+  "algo": "reno",
+  "dur": 15,
+  "omit": 5,
+  "window_kb": 128,
+  "muestreos": {
+   "ss_ms": 200
+  }
+ },
+ "semilla": 2945224840,
+ "inicio": "2026-11-14T11:42:54",
+ "kernel": "6.14.0-27-generic",
+ "status": "ok",
+ "governor": "performance",
+ "no_turbo": 1,
+ "wmem_max": 16777216,
+ "rmem_max": 16777216,
+ "t_iperf_inicio": 1794667376.6919825,
+ "duracion_medicion_s": 20.52,
+ "freq_khz_medicion": {
+  "0": {
+   "min": 400198,
+   "media": 1673402,
+   "max": 2800082,
+   "n": 21
+  },
+  "1": {
+   "min": 400464,
+   "media": 1897234,
+   "max": 2800000,
+   "n": 21
+  },
+  "2": {
+   "min": 399252,
+   "media": 1554608,
+   "max": 2669785,
+   "n": 21
+  },
+  "3": {
+   "min": 393406,
+   "media": 1818226,
+   "max": 2800000,
+   "n": 21
+  }
+ },
+ "cpu_cgroup": {
+  "antes": {
+   "cli": {
+    "usage_usec": 128179971,
+    "user_usec": 77386721,
+    "system_usec": 50793249,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 0,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+   },
+   "r_wan": {
+    "usage_usec": 92422177,
+    "user_usec": 71636583,
+    "system_usec": 20785594,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 0,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+   },
+   "r_bn": {
+    "usage_usec": 93631257,
+    "user_usec": 72674351,
+    "system_usec": 20956905,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 0,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+   },
+   "srv": {
+    "usage_usec": 138933485,
+    "user_usec": 83486368,
+    "system_usec": 55447117,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 0,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+   }
+  },
+  "despues": {
+   "cli": {
+    "usage_usec": 129026995,
+    "user_usec": 77899315,
+    "system_usec": 51127679,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 0,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+   },
+   "r_wan": {
+    "usage_usec": 92956217,
+    "user_usec": 72057835,
+    "system_usec": 20898381,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 0,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+   },
+   "r_bn": {
+    "usage_usec": 94187842,
+    "user_usec": 73094919,
+    "system_usec": 21092922,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 0,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+   },
+   "srv": {
+    "usage_usec": 140251329,
+    "user_usec": 84170339,
+    "system_usec": 56080990,
+    "nice_usec": 0,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 0,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+   }
+  },
+  "delta": {
+   "cli": {
+    "usage_usec": 847024,
+    "nr_throttled": 0
+   },
+   "r_wan": {
+    "usage_usec": 534040,
+    "nr_throttled": 0
+   },
+   "r_bn": {
+    "usage_usec": 556585,
+    "nr_throttled": 0
+   },
+   "srv": {
+    "usage_usec": 1317844,
+    "nr_throttled": 0
+   }
+  }
+ },
+ "congestion_reportada": "reno",
+ "problemas": [],
+ "duracion_total_s": 22.62
+}

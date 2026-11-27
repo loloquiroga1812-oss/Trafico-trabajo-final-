@@ -1,0 +1,8 @@
+== eth0 (198.18.2.*)
+qdisc tbf 8078: root refcnt 9 rate 100Mbit burst 6249b lat 39.5ms 
+ Sent 813189000 bytes 537129 pkt (dropped 38, overlimits 1611147 requeues 0) 
+ backlog 0b 0p requeues 0
+== eth1 (198.18.3.*)
+qdisc noqueue 0: root refcnt 2 
+ Sent 0 bytes 0 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0

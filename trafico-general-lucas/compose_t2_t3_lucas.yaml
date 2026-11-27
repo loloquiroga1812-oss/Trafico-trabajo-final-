@@ -1,0 +1,87 @@
+name: trafico
+
+x-nodo: &nodo
+  image: trafico-nodo:latest
+  build: .
+  command: ["/config/nodo.sh"]
+  cap_add: [NET_ADMIN]
+  init: true
+  volumes:
+    - ./config:/config:ro
+    - ./app:/app:ro
+  healthcheck:
+    test: ["CMD", "test", "-f", "/tmp/listo"]
+    interval: 1s
+    retries: 30
+
+x-router-sysctls: &router-sysctls
+  net.ipv4.ip_forward: 1
+  net.ipv4.conf.all.rp_filter: 0
+  net.ipv4.conf.default.rp_filter: 0
+
+# Redes NO internas, sin salida a Internet (se borra la ruta por defecto en nodo.sh).
+# nat-unprotected: evita que Docker descarte paquetes ruteados hacia el contenedor.
+networks:
+  net_acc:
+    driver: bridge
+    ipam: {config: [{subnet: 198.18.1.0/24}]}
+    driver_opts:
+      com.docker.network.bridge.name: br_acc
+      com.docker.network.bridge.gateway_mode_ipv4: nat-unprotected
+  net_core:
+    driver: bridge
+    ipam: {config: [{subnet: 198.18.2.0/24}]}
+    driver_opts:
+      com.docker.network.bridge.name: br_core
+      com.docker.network.bridge.gateway_mode_ipv4: nat-unprotected
+  net_srv:
+    driver: bridge
+    ipam: {config: [{subnet: 198.18.3.0/24}]}
+    driver_opts:
+      com.docker.network.bridge.name: br_srv
+      com.docker.network.bridge.gateway_mode_ipv4: nat-unprotected
+
+services:
+  cli:
+    <<: *nodo
+    container_name: cli
+    cpuset: "${CPU_CLI}"
+    sysctls:
+      net.ipv4.tcp_no_metrics_save: 1
+    environment:
+      ROUTES: "198.18.2.0/24 via 198.18.1.2;198.18.3.0/24 via 198.18.1.2"
+    networks:
+      net_acc: {ipv4_address: 198.18.1.10}
+
+  r_wan:
+    <<: *nodo
+    container_name: r_wan
+    cpuset: "${CPU_ROUTERS}"
+    sysctls: *router-sysctls
+    environment:
+      ROUTES: "198.18.3.0/24 via 198.18.2.3"
+    networks:
+      net_acc: {ipv4_address: 198.18.1.2}
+      net_core: {ipv4_address: 198.18.2.2}
+
+  r_bn:
+    <<: *nodo
+    container_name: r_bn
+    cpuset: "${CPU_ROUTERS}"
+    sysctls: *router-sysctls
+    environment:
+      ROUTES: "198.18.1.0/24 via 198.18.2.2"
+    networks:
+      net_core: {ipv4_address: 198.18.2.3}
+      net_srv: {ipv4_address: 198.18.3.2}
+
+  srv:
+    <<: *nodo
+    container_name: srv
+    cpuset: "${CPU_SRV}"
+    sysctls:
+      net.ipv4.tcp_no_metrics_save: 1
+    environment:
+      ROUTES: "198.18.1.0/24 via 198.18.3.2;198.18.2.0/24 via 198.18.3.2"
+    networks:
+      net_srv: {ipv4_address: 198.18.3.10}
